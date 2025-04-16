@@ -11,4 +11,4 @@ export interface User {
     activationCode: string;
 }
 
-const schema = mongoose.Schema;
+const schema = mongoose.Schema; 
