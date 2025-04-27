@@ -3,11 +3,12 @@ import { User } from "../models/user.model";
 import jwt from "jsonwebtoken";
 import { SECRET } from "./env";
 
-interface IUserToken
+export interface IUserToken
   extends Omit<
     User,
     | "password"
     | "activationCode"
+    | "isActive"
     | "email"
     | "username"
     | "fullName"
@@ -24,6 +25,7 @@ export const generateToken = (user: IUserToken): string => {
   return token;
 };
 
-export const generateUserData = (token: string) => {
+export const getUserData = (token: string) => {
     const user = jwt.verify(token, SECRET) as IUserToken;
+    return user;
 };
