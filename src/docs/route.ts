@@ -13,5 +13,11 @@ export default function docs(app: Express) {
     "utf8"
   );
 
-  app.get("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerOutput));
+  app.use(
+    "/api-docs",
+    swaggerUi.serve,
+    swaggerUi.setup(swaggerOutput, {
+      customCss: css,
+    })
+  );
 }
