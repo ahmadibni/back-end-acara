@@ -1,8 +1,8 @@
 import { Express } from "express";
 import swaggerUi from "swagger-ui-express";
 import swaggerOutput from "./swagger_output.json";
-import path from "path";
 import fs from "fs";
+import path from "path";
 
 export default function docs(app: Express) {
   const css = fs.readFileSync(
@@ -13,11 +13,5 @@ export default function docs(app: Express) {
     "utf8"
   );
 
-  app.get(
-    "/api-docs",
-    swaggerUi.serve,
-    swaggerUi.setup(swaggerOutput, {
-      customCss: css,
-    })
-  );
+  app.get("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerOutput));
 }
