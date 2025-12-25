@@ -27,7 +27,17 @@ const doc = {
             LoginRequest: {
                 identifier: "ahmadibni",
                 password: "12345",
-            }
+            },
+            RegisterRequest: {
+                fullName: "Ahmad Ibni Abdillah",
+                username: "ahmadibni",
+                email: "ahmadibni@gmail.com",
+                password: "12345",
+                confirmPassword: "12345",
+            },
+            ActivationRequest: {
+                code: "12345",
+            },
         }
     }
 }
