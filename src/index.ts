@@ -9,7 +9,7 @@ import docs from "./docs/route";
 async function init() {
   try {
     const app = express();
-    const PORT = 3000;
+    const PORT = 80;
 
     const result = await db();
     console.log("Database status: " + result);
