@@ -69,6 +69,23 @@ export default {
         confirmPassword,
       });
 
+      const existingUsername = await UserModel.findOne({ username });
+      if (existingUsername) {
+        return res.status(400).json({
+          message: `Username '${username}' is already taken`,
+          data: null,
+        });
+      }
+
+      // Check if email already exists
+      const existingEmail = await UserModel.findOne({ email });
+      if (existingEmail) {
+        return res.status(400).json({
+          message: `Email '${email}' is already registered`,
+          data: null,
+        });
+      }
+
       const result = await UserModel.create({
         fullName,
         username,
