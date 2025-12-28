@@ -98,7 +98,11 @@
             "description": "Forbidden"
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
       }
     },
     "/auth/activation": {

@@ -167,7 +167,7 @@ export default {
     /**
       #swagger.tags = ['Auth']
       #swagger.security = [{
-        "bearerAuth" = []
+        "bearerAuth": []
       }]
      */
     try {
